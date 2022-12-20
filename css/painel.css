@@ -1,0 +1,16 @@
+article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+}
+#novo{
+    width: 100%;
+}
+
+.caixa{
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+}
