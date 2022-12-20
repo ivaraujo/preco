@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Controle</title>
+    <title>Atualizar produtos</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,14 +16,10 @@
     <main>
         <section>
             <?php
-            echo "Sucesso em logar!";            
+                echo"Novos produtos aqui";
             ?>
-            <p><a href="atualiza.php">Novo</a></p>
-            <p><a href="logout.php">Sair</a></p>
-        </section>
-    </main>
-    <footer></footer>
-    
-    
+            <p><a href="painel.php">Voltar</a></p>
+        </section>        
+    </main>    
 </body>
 </html>
