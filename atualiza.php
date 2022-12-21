@@ -1,6 +1,8 @@
 <?php
     include("protect.php");
     
+    $barcode = NULL;
+
     //Váriaveis
     $barcode = $_POST["barcode"];
     $mercado = $_POST["mercado"];
@@ -10,18 +12,7 @@
     $preco = $_POST["preco"];
 	  
 	  
-	  //Introduzindo os dados no BD
-	 $sql = "INSERT INTO mercadorias (barcode,mercado,produto,marca,quantidade,preco) VALUES ('$barcode','$mercado','$produto','$marca','$quant','$preco')";  
 	
-	  
-	  if(!mysqli_query($mysqli,$sql)){
-		  
-		  echo 'Dados não inseridos';
-		
-		  }
-	  else{
-		  echo "Cadastro realizado!";
-		  }
 ?>
 
 <!DOCTYPE html>
@@ -32,17 +23,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar produtos</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/atualiza.css">
 </head>
 <body>
     <header></header>
     <main>
         <section>
+            
+            <form action="" method="post">                
+                <input type="text" name="barcode" placeholder="Código de barra">                
+                <input type="text" name="barcode" placeholder="Código de barra">
+                <input type="text" name="produto" placeholder="Nome do produto">
+                <input type="text" name="marca" placeholder="Nome da marca">
+                <input type="text" name="quantidade" placeholder="Quantidade da mercadoria">
+                <input type="text" name="preco" placeholder="Valor da mercadoria">
+                <button>Cadastrar</button>
+            </form>
+        </section>
+        <section>
             <?php
                 echo"Supermercado: <br>";
                 echo $mercado;
+                echo $barcode;
             ?>
             <p><a href="painel.php">Voltar</a></p>
         </section>        
-    </main>    
+    </main>
+    <footer></footer>    
 </body>
 </html>

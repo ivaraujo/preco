@@ -7,11 +7,8 @@
     $menu_mercados = $mysqli->query($filtro_produtos) or die ($mysqli->error);
     $menu_produto = $mysqli->query($filtro_produtos) or die ($mysqli->error);
 
-    //BUSCAR
-   
-    $busca_mercado = "0";
-	$busca_produto = "0";
-
+    //BUSCAR   
+    
     $busca_mercado = $_POST["loja"];
 	$busca_produto = $_POST["mercadoria"];
 
