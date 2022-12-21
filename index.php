@@ -4,34 +4,33 @@
 
     //FILTROS
     $filtro_produtos = "SELECT * FROM mercadorias";
-    $con = $mysqli->query($filtro_produtos) or die ($mysqli->error);
-    $con2 = $mysqli->query($filtro_produtos) or die ($mysqli->error);
+    $menu_mercados = $mysqli->query($filtro_produtos) or die ($mysqli->error);
+    $menu_produto = $mysqli->query($filtro_produtos) or die ($mysqli->error);
 
     //BUSCAR
+   
+    $busca_mercado = "0";
+	$busca_produto = "0";
 
-    $busca = $_POST["loja"];
-	$prod = $_POST["prod"];
+    $busca_mercado = $_POST["loja"];
+	$busca_produto = $_POST["mercadoria"];
 
-    $consulta = "SELECT * FROM mercadorias";
-    $con3 = $mysqli->query($consulta) or die ($mysqli->error);
-			if($busca=='todos' && $prod=='null'){
-						$consulta = "SELECT * FROM mercadorias ORDER BY produto ASC";
-						
-						}
-						else{
-							
-							if($prod!='null'){	
-								
-								$consulta = "SELECT * FROM mercadorias WHERE produto LIKE '$prod' ORDER BY produto ASC";
-									
-								}
-							
-							else{
-									$consulta = "SELECT * FROM mercadorias WHERE $busca ORDER BY $busca ASC";
-									
-								}
-							
-						}
+    //$consulta = "SELECT * FROM mercadorias";
+    //$lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+    if($busca_mercado=="todos" && $busca_produto==""){
+        $consulta = "SELECT * FROM mercadorias ORDER BY produto ASC";
+        $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+    }
+    else if($busca_produto != ""){
+        $consulta = "SELECT * FROM mercadorias WHERE produto = '$busca_produto'  ORDER BY produto DESC";
+        $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+    }                
+    else{
+        $consulta = "SELECT * FROM mercadorias WHERE mercado = '$busca_mercado' ORDER BY mercado ASC";
+        $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+    }
+                
+            
 
     //LOGIN
     if(isset($_POST['nome']) || isset($_POST['senha'])){
@@ -90,60 +89,49 @@
     <main>
         <section>
             <img src="img/Logo App.png" alt="Logo Alagoinhas Mais"/>
+            <?php 
+            echo "Mercado: $busca_mercado <br>";
+            echo "Produto: $busca_produto";
+            
+            ?>
             <div id="container-pesquisa">
-                <form method="post" action="">
+                <form method="post" action="" id="formulario">
                                     
                     <select name="loja">
                         <option value="todos">Todos</option>
-                        <?php while($dado_loja = $con->fetch_array()){?>
-                        <option value="mercum"><?php echo $dado_loja["mercado"]; ?></option>
+                        <?php while($dado_loja = $menu_mercados->fetch_array()){?>
+                        <option value="<?php echo $dado_loja["mercado"]; ?>"><?php echo $dado_loja["mercado"]; ?></option>
                         <?php }?>
                     </select>
 
-                    <select name="prod">
-                            <option value="null">Selecione um produto</option>
-                            <?php while($dado_produto = $con2->fetch_array()){?>
-                            <option value="item"><?php echo $dado_produto["produto"]; ?></option>
+                    <select name="mercadoria">
+                            <option value="">Selecione um produto</option>
+                            <?php while($dado_produto = $menu_produto->fetch_array()){?>
+                            <option value="<?php echo $dado_produto["produto"]; ?>"><?php echo $dado_produto["produto"]; ?></option>
                             <?php }?>
                     </select>
                     
                     <input type="submit" value="Pesquisar" />		
                     
                 </form>
-                <?php while($dado_geral = $con3->fetch_array()){ ?>
-                    <td><?php echo $dado_geral["mercado"];?></td>
-                    <td><?php echo $dado_geral["produto"];?></td>                      			
-                <?php }?>
-            </div>
-           <!-- <div id="tabela">
-                <?php 
-                    
-                ?>
-                <table id="produtos">
+                <table id="tabela">
                     <tr>
                         <th>Produto</th>
+                        <th>Mercado</th>
                         <th>Marca</th>
-                        <th>Gbarbosa</th>
-                        <th>Medeiros</th>
-                        <th>S.Teresinha</th>
-                        <th>Extra</th>
-                        <th>Economia</th>
-                        <th>Bomjesus</th>
+                        <th>Valor</th>
                     </tr>
-                    
-                    <tr class="coluna">
-                        <td class="titulo"></td>
-                        <td class="titulo"></td>
-                        <td></td>
-                        <td class="zebra"></td>
-                        <td></td>
-                        <td class="zebra"></td>
-                        <td></td>
-                        <td class="zebra"></td>
-                    </tr>
-                    
+                    <?php while($dado_geral = $lista_geral->fetch_array()){ ?>
+                        <tr>
+                            <td><?php echo $dado_geral["produto"];?></td>
+                            <td><?php echo $dado_geral["mercado"];?></td>
+                            <td><?php echo $dado_geral["marca"];?></td>
+                            <td><?php echo $dado_geral["preco"];?></td>
+                        </tr>                                          			
+                    <?php }?>
                 </table>
-            </div>-->
+                
+            </div>
         </section>
     </main>
     <footer>

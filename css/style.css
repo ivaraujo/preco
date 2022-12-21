@@ -47,7 +47,7 @@ button:hover{
 }
 
 main{
-    width: 1200px;
+    width: 900px;
     margin: auto;
     border-radius: 16px;
     background-color: white;
@@ -69,6 +69,45 @@ img{
     padding: 15px;
     border:2px solid rgb(131, 131, 131);
     border-radius: 10px;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+}
+
+select{
+    width: 100%;
+}
+
+#tabela{    
+    width: 100%;
+}
+
+tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    background-color: red;
+}
+
+th{
+    width: 100%;
+    padding: 10px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+td{
+    width: 100%;
+    padding: 10px;
+    background-color: yellow;
+    border: 1px solid black;
+    text-align: center;
 }
 
 footer{
