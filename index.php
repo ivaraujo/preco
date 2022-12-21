@@ -15,9 +15,7 @@
     $busca_mercado = $_POST["loja"];
 	$busca_produto = $_POST["mercadoria"];
 
-    //$consulta = "SELECT * FROM mercadorias";
-    //$lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
-    if($busca_mercado=="todos" && $busca_produto==""){
+    if($busca_mercado=="" && $busca_produto==""){
         $consulta = "SELECT * FROM mercadorias ORDER BY produto ASC";
         $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     }
@@ -80,38 +78,34 @@
 </head>
 <body>
     <header>
-        <form action="" method="post">
+        <form action="" method="post" id="login_header">
             <input type="text" name="nome" placeholder="Usuário" checked autocomplete="off">
             <input type="password" name="senha" placeholder="Senha" checked autocomplete="off">
-            <button type="submit">Logar</button>
+            <button type="submit">Entrar</button>
         </form>
     </header>
     <main>
         <section>
             <img src="img/Logo App.png" alt="Logo Alagoinhas Mais"/>
-            <?php 
-            echo "Mercado: $busca_mercado <br>";
-            echo "Produto: $busca_produto";
             
-            ?>
             <div id="container-pesquisa">
                 <form method="post" action="" id="formulario">
                                     
                     <select name="loja">
-                        <option value="todos">Todos</option>
+                        <option value="">Todos</option>
                         <?php while($dado_loja = $menu_mercados->fetch_array()){?>
                         <option value="<?php echo $dado_loja["mercado"]; ?>"><?php echo $dado_loja["mercado"]; ?></option>
                         <?php }?>
                     </select>
 
                     <select name="mercadoria">
-                            <option value="">Selecione um produto</option>
+                            <option value="">Todos</option>
                             <?php while($dado_produto = $menu_produto->fetch_array()){?>
                             <option value="<?php echo $dado_produto["produto"]; ?>"><?php echo $dado_produto["produto"]; ?></option>
                             <?php }?>
                     </select>
                     
-                    <input type="submit" value="Pesquisar" />		
+                    <button type="submit">Pesquisar</button>		
                     
                 </form>
                 <table id="tabela">
