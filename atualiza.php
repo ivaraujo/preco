@@ -1,5 +1,27 @@
 <?php
     include("protect.php");
+    
+    //Váriaveis
+    $barcode = $_POST["barcode"];
+    $mercado = $_POST["mercado"];
+    $produto = $_POST["produto"];
+    $marca = $_POST["marca"];
+    $quant = $_POST["quantidade"];
+    $preco = $_POST["preco"];
+	  
+	  
+	  //Introduzindo os dados no BD
+	 $sql = "INSERT INTO mercadorias (barcode,mercado,produto,marca,quantidade,preco) VALUES ('$barcode','$mercado','$produto','$marca','$quant','$preco')";  
+	
+	  
+	  if(!mysqli_query($mysqli,$sql)){
+		  
+		  echo 'Dados não inseridos';
+		
+		  }
+	  else{
+		  echo "Cadastro realizado!";
+		  }
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +38,8 @@
     <main>
         <section>
             <?php
-                echo"Novos produtos aqui";
+                echo"Supermercado: <br>";
+                echo $mercado;
             ?>
             <p><a href="painel.php">Voltar</a></p>
         </section>        

@@ -1,6 +1,5 @@
 <?php
     include("protect.php");
-    $opcao = "mercado1"; 
 ?>
 
 <!DOCTYPE html>
@@ -16,53 +15,77 @@
 <body>
     <header></header>
     <main>
-        <section id="novo">  
-            <article>
+        <section id="novo">
+            <div id="login">
+                <p>Bem vindo, <?php echo $_SESSION['name'];  ?></p>
+                <p><a href="logout.php">Sair</a></p>
+            </div>  
+            <article>                
                 <div class="caixa">
-                    <form action="" method="get">   
-                        <input type="radio" name="mercado" id="imercado" value="<?php echo $opcao ?>" checked>                                         
-                        <label for="imercado">Mercado 1</label>
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Gbarbosa" checked>                                         
+                        <label for="imercado">Gbarbosa</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="" method="get">   
-                        <input type="radio" name="mercado" id="imercado" value="<?php echo $opcao ?>" checked>                                         
-                        <label for="imercado">Mercado 1</label>
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Cesta" checked>                                         
+                        <label for="imercado">Cesta do Povo</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="" method="get">   
-                        <input type="radio" name="mercado" id="imercado" value="<?php echo $opcao ?>" checked>                                         
-                        <label for="imercado">Mercado 1</label>
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Medeiros" checked>                                         
+                        <label for="imercado">Medeiros</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="" method="get">   
-                        <input type="radio" name="mercado" id="imercado" value="<?php echo $opcao ?>" checked>                                         
-                        <label for="imercado">Mercado 1</label>
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Sta. Teresinha" checked>                                         
+                        <label for="imercado">Sta. Teresinha</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
             </article>
             <article>
-                <div class="caixa">5</div>
-                <div class="caixa">6</div>
-                <div class="caixa">7</div>
-                <div class="caixa">8</div>
+                <div class="caixa">
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Compre Bem" checked>                                         
+                        <label for="imercado">Compre Bem</label>
+                        <button type="submit">Cadastrar</button>                   
+                    </form>
+                </div>
+                <div class="caixa">
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Economia" checked>                                         
+                        <label for="imercado">Economia da Praça</label>
+                        <button type="submit">Cadastrar</button>                   
+                    </form>
+                </div>
+                <div class="caixa">
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Atakarejo" checked>                                         
+                        <label for="imercado">Atakarejo</label>
+                        <button type="submit">Cadastrar</button>                   
+                    </form>
+                </div>
+                <div class="caixa">
+                    <form action="atualiza.php" method="post" class="botao">   
+                        <input type="radio" name="mercado" id="imercado" value="Rua do Catu" checked>                                         
+                        <label for="imercado">Rua do Catu</label>
+                        <button type="submit">Cadastrar</button>                   
+                    </form>
+                </div>
             </article>             
         </section>
         <section id="deletar">
             <form action="" method="post">
 
             </form>
-            <?php
-            echo "Sucesso em logar!";            
-            ?>
-            <p><a href="atualiza.php">Novo</a></p>
-            <p><a href="logout.php">Sair</a></p>
+            
         </section>
     </main>
     <footer></footer>
