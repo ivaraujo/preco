@@ -87,11 +87,6 @@
             </form>
         </section>
         <section>
-            <?php
-                echo"Supermercado: $mercado<br>";
-                echo $produto;
-                echo $test;
-            ?>
             <p><a href="painel.php">Voltar</a></p>
         </section>        
     </main>
