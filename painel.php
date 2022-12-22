@@ -22,28 +22,28 @@
             </div>  
             <article>                
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Gbarbosa" checked>                                         
                         <label for="imercado">Gbarbosa</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Cesta" checked>                                         
                         <label for="imercado">Cesta do Povo</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Medeiros" checked>                                         
                         <label for="imercado">Medeiros</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Sta. Teresinha" checked>                                         
                         <label for="imercado">Sta. Teresinha</label>
                         <button type="submit">Cadastrar</button>                   
@@ -52,28 +52,28 @@
             </article>
             <article>
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Compre Bem" checked>                                         
                         <label for="imercado">Compre Bem</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Economia" checked>                                         
                         <label for="imercado">Economia da Praça</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Atakarejo" checked>                                         
                         <label for="imercado">Atakarejo</label>
                         <button type="submit">Cadastrar</button>                   
                     </form>
                 </div>
                 <div class="caixa">
-                    <form action="atualiza.php" method="post" class="botao">   
+                    <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Rua do Catu" checked>                                         
                         <label for="imercado">Rua do Catu</label>
                         <button type="submit">Cadastrar</button>                   

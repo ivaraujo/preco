@@ -31,8 +31,7 @@ header{
 }
 
 #login_header > button:hover{
-    border: 1px solid white;
-    background-color: red;    
+    border: 1px solid white;  
 }
 
 input {
