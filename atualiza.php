@@ -28,18 +28,37 @@
 
     
     //VALIDAR PRODUTO
-
-    $validar = "SELECT count(*) as total FROM mercadorias WHERE barcode = '$barcode'";
-    $resultado = mysqli_query($validar);
-    $row = mysqli_fetch_assoc($resultado); 
+    //$validar = "SELECT count(*) as barcode FROM mercadorias WHERE barcode = '$barcode'";
+    //$resultado = mysqli_query($validar);
+    //$row = mysqli_fetch_assoc($resultado); 
+    $validar = "SELECT * FROM mercadorias WHERE barcode = '$barcode'";
+    $resultado = $mysqli->query($validar) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
+    $row = $resultado->num_rows;
     
-    if($row['barcode'] == 1){
-        echo "EXITE";
+    if($row == 1){
+        echo "TEM SIM";
+        $sql_cadastro = "UPDATE mercadorias SET mercado='$mercado', produto='$produto', marca='$marca', quantidade='$quant', preco='$preco' WHERE barcode='$barcode'";
+        $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
+
+        if($confirma){
+            echo "Foi atualizado"; 
+        }
+        else{
+            echo"Erro ao atualizar";
+        }
     }
     else{
-        echo "NAO EXISTE";
-    }
+        echo "NAO TEM";
+        $sql_cadastro = "INSERT INTO mercadorias (barcode, mercado, produto, marca, quantidade, preco) VALUES ('$barcode', '$mercado', '$produto', '$marca', '$quant', '$preco' )";
+        $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
 
+        if($confirma){
+            echo "Cadastrado"; 
+        }
+        else{
+            echo"Erro no cadastro";
+        }
+    }
     
 ?>
 
@@ -71,6 +90,7 @@
             <?php
                 echo"Supermercado: $mercado<br>";
                 echo $produto;
+                echo $test;
             ?>
             <p><a href="painel.php">Voltar</a></p>
         </section>        
