@@ -7,8 +7,12 @@
     $menu_mercados = $mysqli->query($filtro_produtos) or die ($mysqli->error);
     $menu_produto = $mysqli->query($filtro_produtos) or die ($mysqli->error);
 
-    //BUSCAR   
+    //BUSCAR 
     
+    $consulta = "SELECT * FROM mercadorias ORDER BY produto ASC";
+    $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+    
+    if(isset($_POST["loja"]) || isset($_POST["mercadoria"])){
     $busca_mercado = $_POST["loja"];
 	$busca_produto = $_POST["mercadoria"];
 
@@ -24,6 +28,9 @@
         $consulta = "SELECT * FROM mercadorias WHERE mercado = '$busca_mercado' ORDER BY mercado ASC";
         $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     }
+
+    }
+    
                 
             
 
