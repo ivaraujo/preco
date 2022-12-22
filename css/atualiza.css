@@ -4,6 +4,7 @@ form{
     width: 70%;
     padding: 15px;
     background-color: yellow;
+    border: 2px solid gray;
 }
 
 input{

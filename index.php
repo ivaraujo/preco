@@ -3,7 +3,7 @@
     include("conexao.php");
 
     //FILTROS
-    $filtro_produtos = "SELECT * FROM mercadorias";
+    $filtro_produtos = "SELECT DISTINCT mercado, produto FROM mercadorias";
     $menu_mercados = $mysqli->query($filtro_produtos) or die ($mysqli->error);
     $menu_produto = $mysqli->query($filtro_produtos) or die ($mysqli->error);
 
@@ -96,14 +96,14 @@
                 <form method="post" action="" id="formulario">
                                     
                     <select name="loja">
-                        <option value="">Todos</option>
+                        <option value="">Todos os mercados</option>
                         <?php while($dado_loja = $menu_mercados->fetch_array()){?>
                         <option value="<?php echo $dado_loja["mercado"]; ?>"><?php echo $dado_loja["mercado"]; ?></option>
                         <?php }?>
                     </select>
 
                     <select name="mercadoria">
-                            <option value="">Todos</option>
+                            <option value="">Todos os produtos</option>
                             <?php while($dado_produto = $menu_produto->fetch_array()){?>
                             <option value="<?php echo $dado_produto["produto"]; ?>"><?php echo $dado_produto["produto"]; ?></option>
                             <?php }?>
