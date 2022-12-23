@@ -111,7 +111,8 @@
             </script>
 
         </section>
-        <section>            
+        <section>
+            <h2>Cadastrar/Atualizar</h2>            
             <form action="" method="post">                
                 <input type="text" name="barcode" placeholder="Código de barra" required autocomplete="off"> 
                 <input type="text" name="produto" placeholder="Nome do produto" required>

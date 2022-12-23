@@ -25,8 +25,9 @@
             <div id="login">
                 <p>Bem vindo, <?php echo $_SESSION['name'];  ?></p>
                 <p><a href="logout.php">Sair</a></p>
-            </div>  
-            <article>                
+            </div>
+            <h2>Cadastro de novos produtos</h2>   
+            <article>                              
                 <div class="caixa">
                     <form action="atualiza.php" method="get" class="botao">   
                         <input type="radio" name="mercado" id="imercado" value="Gbarbosa" checked>                                         
@@ -88,6 +89,7 @@
             </article>             
         </section>
         <section id="deletar">
+            <h2>Produtos para apagar</h2>
             <table>
                 <tr>
                     <th>Produto</th>
