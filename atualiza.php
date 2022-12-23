@@ -12,40 +12,59 @@
         $marca = $_POST["marca"];
         $quant = $_POST["quantidade"];
         $preco = $_POST["preco"];
+    
+        $validar_barcode = "SELECT * FROM mercadorias WHERE barcode = '$barcode'";
+        $resultado_barcode = $mysqli->query($validar_barcode) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
+        $row_barcode = $resultado_barcode->num_rows;
+
+        $validar_mercado = "SELECT * FROM mercadorias WHERE mercado = '$mercado'";
+        $resultado_mercado = $mysqli->query($validar_mercado) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
+        $row_mercado = $resultado_mercado->num_rows;
+        
+        if($row_barcode == 1){
+            echo "TEM SIM ";      
+            
+
+            if($row_mercado == 1){
+                echo "Mesmo mercado";
+                $sql_cadastro = "UPDATE mercadorias SET mercado='$mercado', produto='$produto', marca='$marca', quantidade='$quant', preco='$preco' WHERE barcode='$barcode'";
+                $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
+
+                if($confirma){
+                    echo "Cadastrado"; 
+                }
+                else{
+                    echo"Erro no cadastro";
+                }
+            }
+            else{
+                echo"Mercado diferente";
+                $sql_cadastro = "INSERT INTO mercadorias (barcode, mercado, produto, marca, quantidade, preco) VALUES ('$barcode', '$mercado', '$produto', '$marca', '$quant', '$preco' )";
+                $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
+
+                if($confirma){
+                    echo "Cadastrado"; 
+                }
+                else{
+                    echo"Erro no cadastro";
+                }
+            }
+        }
+        else{
+            echo "NAO TEM ";
+            $sql_cadastro = "INSERT INTO mercadorias (barcode, mercado, produto, marca, quantidade, preco) VALUES ('$barcode', '$mercado', '$produto', '$marca', '$quant', '$preco' )";
+            $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
+
+            if($confirma){
+                echo "Cadastrado"; 
+            }
+            else{
+                echo"Erro no cadastro";
+            }
+        }
     }  
 	  
-    $validar_barcode = "SELECT * FROM mercadorias WHERE barcode = '$barcode'";
-    $resultado_barcode = $mysqli->query($validar_barcode) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
-    $row_barcode = $resultado_barcode->num_rows;
-
-    $validar_mercado = "SELECT * FROM mercadorias WHERE mercado = '$mercado'";
-    $resultado_barcode = $mysqli->query($validar_mercado) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
-    $row_mercado = $resultado_mercado->num_rows;
     
-    if($row_barcode == 1){
-        echo "TEM SIM";
-        $sql_cadastro = "UPDATE mercadorias SET mercado='$mercado', produto='$produto', marca='$marca', quantidade='$quant', preco='$preco' WHERE barcode='$barcode'";
-        $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
-
-        if($confirma){
-            echo "Foi atualizado"; 
-        }
-        else{
-            echo"Erro ao atualizar";
-        }
-    }
-    else{
-        echo "NAO TEM";
-        $sql_cadastro = "INSERT INTO mercadorias (barcode, mercado, produto, marca, quantidade, preco) VALUES ('$barcode', '$mercado', '$produto', '$marca', '$quant', '$preco' )";
-        $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
-
-        if($confirma){
-            echo "Cadastrado"; 
-        }
-        else{
-            echo"Erro no cadastro";
-        }
-    }
     
 ?>
 
