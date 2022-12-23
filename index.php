@@ -21,7 +21,7 @@
         $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     }
     else if($busca_produto != ""){
-        $consulta = "SELECT * FROM mercadorias WHERE produto = '$busca_produto'  ORDER BY produto DESC";
+        $consulta = "SELECT * FROM mercadorias WHERE produto = '$busca_produto'  ORDER BY preco ASC";
         $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     }                
     else{
@@ -29,10 +29,7 @@
         $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     }
 
-    }
-    
-                
-            
+    }    
 
     //LOGIN
     if(isset($_POST['nome']) || isset($_POST['senha'])){
@@ -117,6 +114,7 @@
                         <th>Produto</th>
                         <th>Mercado</th>
                         <th>Marca</th>
+                        <th>Quantidade</th>
                         <th>Valor</th>
                     </tr>
                     <?php while($dado_geral = $lista_geral->fetch_array()){ ?>
@@ -124,6 +122,7 @@
                             <td><?php echo $dado_geral["produto"];?></td>
                             <td><?php echo $dado_geral["mercado"];?></td>
                             <td><?php echo $dado_geral["marca"];?></td>
+                            <td><?php echo $dado_geral["quantidade"];?></td>
                             <td><?php echo $dado_geral["preco"];?></td>
                         </tr>                                          			
                     <?php }?>

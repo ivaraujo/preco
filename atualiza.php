@@ -14,28 +14,15 @@
         $preco = $_POST["preco"];
     }  
 	  
-	/*
-    $sql_cadastro = "INSERT INTO mercadorias (barcode, mercado, produto, marca, quantidade, preco) VALUES ('$barcode', '$mercado', '$produto', '$marca', '$quant', '$preco' )";
-    $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
+    $validar_barcode = "SELECT * FROM mercadorias WHERE barcode = '$barcode'";
+    $resultado_barcode = $mysqli->query($validar_barcode) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
+    $row_barcode = $resultado_barcode->num_rows;
 
-    if($confirma){
-        echo "Cadastrado"; 
-    }
-    else{
-        echo"Erro no cadastro";
-    }
-    */
-
+    $validar_mercado = "SELECT * FROM mercadorias WHERE mercado = '$mercado'";
+    $resultado_barcode = $mysqli->query($validar_mercado) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
+    $row_mercado = $resultado_mercado->num_rows;
     
-    //VALIDAR PRODUTO
-    //$validar = "SELECT count(*) as barcode FROM mercadorias WHERE barcode = '$barcode'";
-    //$resultado = mysqli_query($validar);
-    //$row = mysqli_fetch_assoc($resultado); 
-    $validar = "SELECT * FROM mercadorias WHERE barcode = '$barcode'";
-    $resultado = $mysqli->query($validar) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
-    $row = $resultado->num_rows;
-    
-    if($row == 1){
+    if($row_barcode == 1){
         echo "TEM SIM";
         $sql_cadastro = "UPDATE mercadorias SET mercado='$mercado', produto='$produto', marca='$marca', quantidade='$quant', preco='$preco' WHERE barcode='$barcode'";
         $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
@@ -75,6 +62,36 @@
 <body>
     <header></header>
     <main>
+        <section>
+            <div id="camera"></div>
+            <div id="resultado_scan"></div>
+
+            <script src="quagga.min.js"></script>
+            <script>
+                Quagga.init({
+                inputStream : {
+                    name : "Live",
+                    type : "LiveStream",
+                    target: document.querySelector('#camera')    // Or '#yourElement' (optional)
+                },
+                decoder : {
+                readers : ["code_128_reader"]
+                }
+                }, function(err) {
+                    if (err) {
+                        console.log(err);
+                        return
+                    }
+                    console.log("Initialization finished. Ready to start");
+                    Quagga.start();
+                });
+
+                Quagga.onDetected(funtion(data){
+                    console.log(data);
+                });
+            </script>
+
+        </section>
         <section>            
             <form action="" method="post">                
                 <input type="text" name="barcode" placeholder="Código de barra" required autocomplete="off"> 

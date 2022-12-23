@@ -44,3 +44,18 @@ button{
     border-radius: 16px;
     
 }
+
+#deletar{
+    width: 100%;
+    height: 100%;
+}
+
+table{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#botao_apagar{
+    height: 40px;
+}

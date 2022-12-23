@@ -1,5 +1,9 @@
 <?php
     include("protect.php");
+    include("conexao.php");
+
+    $consulta = "SELECT * FROM mercadorias ORDER BY preco ASC";
+    $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
 ?>
 
 <!DOCTYPE html>
@@ -82,10 +86,24 @@
             </article>             
         </section>
         <section id="deletar">
-            <form action="" method="post">
-
-            </form>
-            
+            <table>
+                <tr>
+                    <th>Produto</th>
+                    <th>Mercado</th>
+                    <th>Marca</th>
+                    <th>Valor</th>
+                    <th></th>
+                </tr>
+                <?php while($dado_geral = $lista_geral->fetch_array()){ ?>
+                    <tr>
+                        <td><?php echo $dado_geral["produto"];?></td>
+                        <td><?php echo $dado_geral["mercado"];?></td>
+                        <td><?php echo $dado_geral["marca"];?></td>
+                        <td><?php echo $dado_geral["preco"];?></td>
+                        <td><button id="botao_apagar">Apagar</button></td>
+                    </tr>                                          			
+                <?php }?>
+            </table>
         </section>
     </main>
     <footer></footer>
