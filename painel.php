@@ -2,8 +2,10 @@
     include("protect.php");
     include("conexao.php");
 
-    $consulta = "SELECT * FROM mercadorias ORDER BY preco ASC";
+    $consulta = "SELECT * FROM mercadorias";
     $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +102,7 @@
                         <td><?php echo $dado_geral["mercado"];?></td>
                         <td><?php echo $dado_geral["marca"];?></td>
                         <td><?php echo $dado_geral["preco"];?></td>
-                        <td><button id="botao_apagar">Apagar</button></td>
+                        <td><a href='delete.php?id=<?php echo $dado_geral["id"];?>' id="deleta">Apagar</a></td>
                     </tr>                                          			
                 <?php }?>
             </table>

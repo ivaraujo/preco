@@ -56,6 +56,16 @@ table{
     width: 100%;
 }
 
-#botao_apagar{
-    height: 40px;
+td > a{
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+td > a:hover{
+    background-color: red;
+    border: 1px solid white;
+    border-radius: 16px;
 }
