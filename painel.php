@@ -9,6 +9,9 @@
     $cargos = "SELECT cargo FROM usuarios WHERE nome ='$usuario'";
     $lista_cargos = $mysqli->query($cargos) or die ($mysqli->error);
     $cargo = $lista_cargos->fetch_assoc();
+
+    $usuarios = "SELECT * FROM usuarios";
+    $lista_usuarios = $mysqli->query($usuarios) or die ($mysqli->error);
     
 ?>
 
@@ -119,8 +122,27 @@
         if($cargo['cargo'] == 'administrador'){             
             
         ?>
-        <section id="cadastro">
-            <h1>Cadastrar Usuários</h1>
+        <section id="usuarios">
+            <h1>Usuários</h1>
+            <div>
+                <article id="usuarios-cadastro">
+                    <form action="" method="post">
+                        <input type="text">
+                        <input type="text">
+                        <input type="text">
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </article>
+                <article id="usuarios-lista">
+                    <?php while($dado_usuarios = $lista_usuarios->fetch_array()){ ?>
+                        <tr>
+                            <td><?php echo $dado_usuarios["nome"];?></td>
+                            <td><?php echo $dado_usuarios["cargo"];?></td>
+                            <td><a href='delete_user.php?id=<?php echo $dado_usuarios["id"];?>' id="deleta">Apagar</a></td>
+                        </tr>                                          			
+                    <?php }?>
+                </article>
+            </div>            
         </section>
         <?php } ?>
     </main>

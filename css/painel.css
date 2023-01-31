@@ -77,3 +77,24 @@ td > a:hover{
     border: 1px solid white;
     border-radius: 16px;
 }
+
+#usuarios{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#usuarios div{
+    display: flex;
+    flex-direction: row;
+}
+
+#usuario-cadastro form{
+    display: flex;
+    flex-direction: column;
+}
+
+#usuario-lista{
+    display: flex;
+    flex-direction: column;
+}
