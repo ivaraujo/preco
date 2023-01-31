@@ -4,7 +4,11 @@
 
     $consulta = "SELECT * FROM mercadorias";
     $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
-
+    
+    $usuario = $_SESSION['name'];
+    $cargos = "SELECT cargo FROM usuarios WHERE nome ='$usuario'";
+    $lista_cargos = $mysqli->query($cargos) or die ($mysqli->error);
+    $cargo = $lista_cargos->fetch_assoc();
     
 ?>
 
@@ -109,6 +113,16 @@
                 <?php }?>
             </table>
         </section>
+        <?php
+            echo $cargo['cargo'];
+        
+        if($cargo['cargo'] == 'administrador'){             
+            
+        ?>
+        <section id="cadastro">
+            <h1>Cadastrar Usuários</h1>
+        </section>
+        <?php } ?>
     </main>
     <footer></footer>
     
