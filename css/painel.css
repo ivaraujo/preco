@@ -89,12 +89,23 @@ td > a:hover{
     flex-direction: row;
 }
 
+#usuario-cadastro{
+    width: 50%;
+}
+
 #usuario-cadastro form{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    background-color: yellow;
 }
 
 #usuario-lista{
+    width: 50%;
+}
+
+#usuario-lista tr{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
