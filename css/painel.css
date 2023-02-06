@@ -103,6 +103,7 @@ td > a:hover{
 #usuarios h2{
     width: 100%;
     padding: 10px;
+    margin-bottom: 30px;
     border-radius: 10px;
     text-align: center;
     background-color: brown;
@@ -110,7 +111,7 @@ td > a:hover{
 }
 
 #usuarios-cadastro{
-    width: 30%;
+    width: 100%;
     height: 100%;
 }
 
@@ -140,7 +141,8 @@ td > a:hover{
 }
 
 #usuarios-lista{
-    width: 70%;
+    width: 100%;
+    height: 100%;
 }
 
 #usuarios-lista table{
@@ -165,5 +167,11 @@ td > a:hover{
 
 #form-radio{
     display: flex;
+    flex-direction: column;
+}
+.form-radio{
+    display: flex;
     flex-direction: row;
+    width: 30%;
+    background-color: red;
 }

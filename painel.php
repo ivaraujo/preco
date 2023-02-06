@@ -128,12 +128,17 @@
                         <input type="text" id="nome" placeholder="Usuário">
                         <input type="email" id="email" placeholder="email@email.com.br">
                         <input type="password" id="senha" placeholder="Senha">
-                        <div id="form-radio">
-                            <input type="radio" name="admin_cargo" id="cargo" value="administrador">
-                            <label for="cargo">Administrador</label>
-                            <input type="radio" name="coletor_cargo" id="cargo" value="coletor" checked>
-                            <label for="cargo">Coletor</label>
-                        </div>                        
+                        <p id="form-radio">
+                            <p class="form-radio">
+                                <input type="radio" name="cargo" id="admin" value="administrador">
+                                <label for="admin">Administrador</label>
+                            </p>
+                            
+                            <p class="form-radio">
+                                <input type="radio" name="cargo" id="coletor" value="coletor" checked>
+                                <label for="coletor">Coletor</label>
+                            </p>                            
+                        </p>                        
                         <button type="submit">Cadastrar</button>
                     </form>
                 </article>
