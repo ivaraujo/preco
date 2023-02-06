@@ -117,8 +117,6 @@
             </table>
         </section>
         <?php
-            echo $cargo['cargo'];
-        
         if($cargo['cargo'] == 'administrador'){             
             
         ?>
@@ -127,9 +125,15 @@
             <div>
                 <article id="usuarios-cadastro">
                     <form action="" method="post">
-                        <input type="text">
-                        <input type="text">
-                        <input type="text">
+                        <input type="text" id="nome" placeholder="Usuário">
+                        <input type="email" id="email" placeholder="email@email.com.br">
+                        <input type="password" id="senha" placeholder="Senha">
+                        <div id="form-radio">
+                            <input type="radio" name="admin_cargo" id="cargo" value="administrador">
+                            <label for="cargo">Administrador</label>
+                            <input type="radio" name="coletor_cargo" id="cargo" value="coletor" checked>
+                            <label for="cargo">Coletor</label>
+                        </div>                        
                         <button type="submit">Cadastrar</button>
                     </form>
                 </article>
@@ -149,7 +153,7 @@
                         <?php }?>
                     </table>                    
                 </article>
-            </div>            
+            </div>             
         </section>
         <?php } ?>
     </main>

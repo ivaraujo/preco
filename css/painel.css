@@ -91,7 +91,7 @@ td > a:hover{
 }
 
 #usuarios-cadastro{
-    width: 50%;
+    width: 30%;
     height: 100%;
 }
 
@@ -116,12 +116,12 @@ td > a:hover{
 }
 
 #usuarios-cadastro button{
-    width: 50%;
+    width: 100%;
     border: none;
 }
 
 #usuarios-lista{
-    width: 50%;
+    width: 70%;
 }
 
 #usuarios-lista table{
@@ -129,17 +129,17 @@ td > a:hover{
     flex-direction: row;
     width: 100%;
     padding: 30px;
-    border-radius: 10px;
-    background-color: #E7C570;
 }
 
 #usuarios-lista tr{
-    background-color: aqua;
 }
 
 #usuarios-tabela{
 }
 
-#usuarios-lista button{
+#usuarios-lista a{
     background-color: black;
+}
+#usuarios-lista a:hover{
+    background-color: red;
 }
