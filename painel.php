@@ -121,7 +121,7 @@
             
         ?>
         <section id="usuarios">
-            <h1>Usuários</h1>
+            <h2>Usuários</h2>
             <div>
                 <article id="usuarios-cadastro">
                     <form action="" method="post">
