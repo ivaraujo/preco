@@ -134,13 +134,20 @@
                     </form>
                 </article>
                 <article id="usuarios-lista">
-                    <?php while($dado_usuarios = $lista_usuarios->fetch_array()){ ?>
+                    <table>
                         <tr>
-                            <td><?php echo $dado_usuarios["nome"];?></td>
-                            <td><?php echo $dado_usuarios["cargo"];?></td>
-                            <td><a href='delete_user.php?id=<?php echo $dado_usuarios["id"];?>' id="deleta">Apagar</a></td>
-                        </tr>                                          			
-                    <?php }?>
+                            <th>Usuario</th>
+                            <th>Categoria</th>
+                            <th></th>
+                        </tr>
+                        <?php while($dado_usuarios = $lista_usuarios->fetch_array()){ ?>
+                            <tr>
+                                <td><?php echo $dado_usuarios["nome"];?></td>
+                                <td><?php echo $dado_usuarios["cargo"];?></td>
+                                <td><a href='delete_user.php?id=<?php echo $dado_usuarios["id"];?>' id="deleta">Apagar</a></td>
+                            </tr>                                          			
+                        <?php }?>
+                    </table>                    
                 </article>
             </div>            
         </section>

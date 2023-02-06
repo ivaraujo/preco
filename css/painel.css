@@ -85,27 +85,61 @@ td > a:hover{
 }
 
 #usuarios div{
+    width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-#usuario-cadastro{
+#usuarios-cadastro{
+    width: 50%;
+    height: 100%;
+}
+
+#usuarios-cadastro form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #E7C570;
+}
+
+#usuarios-cadastro input{
+    width: 90%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 20px;
+    outline: none;
+    border: none;
+}
+
+#usuarios-cadastro button{
+    width: 50%;
+    border: none;
+}
+
+#usuarios-lista{
     width: 50%;
 }
 
-#usuario-cadastro form{
+#usuarios-lista table{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    background-color: yellow;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #E7C570;
 }
 
-#usuario-lista{
-    width: 50%;
+#usuarios-lista tr{
+    background-color: aqua;
 }
 
-#usuario-lista tr{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+#usuarios-tabela{
+}
+
+#usuarios-lista button{
+    background-color: black;
 }
