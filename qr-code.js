@@ -20,12 +20,19 @@ function capturar(){
     
         Quagga.onDetected(function (data){
             console.log(data);
-            let res = document.querySelector("[id='barcode']").value = data.codeResult.code;
+            let res = document.querySelector("[id='barcode']").value = data.codeResult.code;            
         });
         
 }
 
 
+function showModal(){
+    var element = document.querySelector('.modal');
+    element.classList.add('show-modal');
+    //capturar();
+
+
+}
 
 
 
