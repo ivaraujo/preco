@@ -82,7 +82,7 @@
 <body>
     <header></header>
     <main>
-        <section>
+    <section>
             
             <button onclick="capturar()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
@@ -90,11 +90,8 @@
                 <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
                 </svg>        
             </button>
-            <div class="modal" id="modal">
-                <div class="modal-content">
-                    <div id="camera"></div>
-                </div>
-            </div>    
+            <div id="camera"></div>
+                
             <script src="qr-code.js"></script> 
         </section>
         

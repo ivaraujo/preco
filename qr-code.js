@@ -1,3 +1,19 @@
+//var _scannerIsRunning = false;
+/*
+function showModal(){
+    var element = document.getElementById('modal');
+    element.classList.add('show-modal');
+}
+
+function camera(){
+        if (_scannerIsRunning) {
+            Quagga.stop();
+        } else {
+            capturar();
+        }
+}*/
+
+
 function capturar(){
     Quagga.init({
         inputStream : {
@@ -25,15 +41,13 @@ function capturar(){
         
 }
 
-
+/*
 function showModal(){
     var element = document.querySelector('.modal');
     element.classList.add('show-modal');
     //capturar();
 
 
-}
-
-
+}*/
 
 
