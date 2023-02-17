@@ -77,6 +77,7 @@
     <title>Atualizar produtos</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/atualiza.css">
+    <link rel="stylesheet" href="css/mobile-atualiza.css">
     <script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js"></script>
 </head>
 <body>

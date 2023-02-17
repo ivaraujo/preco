@@ -1,0 +1,37 @@
+@media screen and (max-width: 780px){
+    header{
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    #login_header{
+        width: 100%;
+        background-color: aqua;
+    }
+
+    main{
+        width: 100%;
+        max-width: 400px;
+    }
+    footer{
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    button{
+        font-size: 9pt;
+    }
+
+    input{
+        width: 100%;
+        font-size: 9pt;
+    }
+    
+}
