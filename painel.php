@@ -12,7 +12,18 @@
 
     $usuarios = "SELECT * FROM usuarios";
     $lista_usuarios = $mysqli->query($usuarios) or die ($mysqli->error);
+
+
+//cadastro usuarios
     
+        $n_nome = $_POST["nome"];    
+        $n_email = $_POST["email"];
+        $n_senha = $_POST["senha"];
+        $n_cargo = $_POST["cargo"];
+      
+    $sql_cadastro_usuario = "INSERT INTO usuarios (nome, email, senha, cargo) VALUES ('$n_nome', '$n_email', '$n_senha', '$n_cargo')";
+    $confirma_cadastro = $mysqli->query($sql_cadastro_usuario) or die($mysqli->error);
+     
 ?>
 
 <!DOCTYPE html>
@@ -125,21 +136,16 @@
             <div>
                 <article id="usuarios-cadastro">
                     <form action="" method="post">
-                        <input type="text" id="nome" placeholder="Usuário">
-                        <input type="email" id="email" placeholder="email@email.com.br">
-                        <input type="password" id="senha" placeholder="Senha">
-                        <p id="form-radio">
-                            <p class="form-radio">
-                                <input type="radio" name="cargo" id="admin" value="administrador">
-                                <label for="admin">Administrador</label>
-                            </p>
-                            
-                            <p class="form-radio">
-                                <input type="radio" name="cargo" id="coletor" value="coletor" checked>
-                                <label for="coletor">Coletor</label>
-                            </p>                            
-                        </p>                        
-                        <button type="submit">Cadastrar</button>
+                        <input type="text" name="nome" id="nome" placeholder="Usuário">
+                        <input type="email" name="email" id="email" placeholder="email@email.com.br">
+                        <input type="password" name="senha" id="senha" placeholder="Senha">
+                        <div id="form-radio">                            
+                            <input type="radio" name="cargo" id="admin" value="administrador">
+                            <label for="admin">Administrador</label>
+                            <input type="radio" name="cargo" id="coletor" value="coletor" checked>
+                            <label for="coletor">Coletor</label>
+                        </div>                        
+                        <button type="submit" name="cadastrar">Cadastrar</button>
                     </form>
                 </article>
                 <article id="usuarios-lista">

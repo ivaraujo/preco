@@ -25,6 +25,11 @@ h2{
     color: black;
 }
 
+#camera-captura{
+    width: 150px;
+    height: 150px;
+}
+
 /*********** MODAL ***********/
 
 .modal{

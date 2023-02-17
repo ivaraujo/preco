@@ -127,7 +127,7 @@ td > a:hover{
 }
 
 #usuarios-cadastro input{
-    width: 90%;
+    width: 100%;
     margin-bottom: 15px;
     border-radius: 10px;
     padding: 20px;
@@ -149,16 +149,22 @@ td > a:hover{
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 30px;
 }
 
 #usuarios-lista tr{
+    width: 100%;
+}
+
+#usuarios-lista td{
+    width: 200px;
 }
 
 #usuarios-tabela{
+
 }
 
 #usuarios-lista a{
+    border: 0px;
     background-color: black;
 }
 #usuarios-lista a:hover{
@@ -167,11 +173,14 @@ td > a:hover{
 
 #form-radio{
     display: flex;
-    flex-direction: column;
-}
-.form-radio{
-    display: flex;
     flex-direction: row;
-    width: 30%;
-    background-color: red;
+    padding: 10px;
+}
+
+#form-radio label{
+    width: 100px;
+}
+
+#form-radio input{
+    width: 25px;
 }
