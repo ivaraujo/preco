@@ -1,20 +1,8 @@
-//var _scannerIsRunning = false;
-/*
-function showModal(){
-    var element = document.getElementById('modal');
-    element.classList.add('show-modal');
-}
-
-function camera(){
-        if (_scannerIsRunning) {
-            Quagga.stop();
-        } else {
-            capturar();
-        }
-}*/
-
-
 function capturar(){
+    var element = document.querySelector('.modal');
+    element.classList.add('showModal');
+
+
     Quagga.init({
         inputStream : {
             name : "Live",
@@ -41,13 +29,10 @@ function capturar(){
         
 }
 
-/*
-function showModal(){
+
+function fechar(){
     var element = document.querySelector('.modal');
-    element.classList.add('show-modal');
-    //capturar();
-
-
-}*/
+    element.classList.remove('showModal');
+}
 
 
