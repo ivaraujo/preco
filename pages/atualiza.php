@@ -1,6 +1,6 @@
 <?php
     include("protect.php");
-    include("conexao.php");    
+    include("conexao.php"); 
     
     
     //Váriaveis
@@ -65,8 +65,6 @@
         }
     }  
 	  
-    
-    
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +100,7 @@
             </div>
             <script src="../js/qr-code.js"></script> 
         </section>
-        
+
         <section>            
             <h2>Cadastrar/Atualizar</h2>            
             <form action="" method="post">                
