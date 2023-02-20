@@ -36,6 +36,3 @@ function fechar(){
     var element = document.querySelector('.modal');
     element.classList.remove('showModal');
 }
-
-
-
