@@ -17,12 +17,13 @@
         $resultado_barcode = $mysqli->query($validar_barcode) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
         $row_barcode = $resultado_barcode->num_rows;
 
-        $validar_mercado = "SELECT * FROM mercadorias WHERE mercado = '$mercado'";
-        $resultado_mercado = $mysqli->query($validar_mercado) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
-        $row_mercado = $resultado_mercado->num_rows;
+        
         
         if($row_barcode == 1){
-            echo "TEM SIM ";      
+            echo "TEM SIM "; 
+            $validar_mercado = "SELECT * FROM mercadorias WHERE barcode = '$barcode' AND mercado = '$mercado'";
+            $resultado_mercado = $mysqli->query($validar_mercado) or die("<p>Falha na execução do código SQL: </p>" . $mysqli->error);
+            $row_mercado = $resultado_mercado->num_rows;     
             
 
             if($row_mercado == 1){
@@ -31,7 +32,7 @@
                 $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
 
                 if($confirma){
-                    echo "Cadastrado"; 
+                    echo "Atualizado!"; 
                 }
                 else{
                     echo"Erro no cadastro";
@@ -43,7 +44,7 @@
                 $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
 
                 if($confirma){
-                    echo "Cadastrado"; 
+                    echo "Cadastrado no novo mercado"; 
                 }
                 else{
                     echo"Erro no cadastro";
@@ -56,7 +57,7 @@
             $confirma = $mysqli->query($sql_cadastro) or die($mysqli->error);
 
             if($confirma){
-                echo "Cadastrado"; 
+                echo "Cadastrado novo item"; 
             }
             else{
                 echo"Erro no cadastro";
