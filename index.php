@@ -1,6 +1,6 @@
 <div id="php">
     <?php
-    include("conexao.php");
+    include("pages/conexao.php");
 
     //FILTROS
     $filtro_produtos = "SELECT DISTINCT mercado, produto FROM mercadorias";
@@ -57,7 +57,7 @@
                 $_SESSION['id'] =  $usuario['id'];
                 $_SESSION['name'] =  $usuario['nome'];
 
-                header("Location: painel.php");
+                header("Location: pages/painel.php");
             }
             else{
                 echo "<p>Falha ao logar! E-mail ou senha incorretos</p>";

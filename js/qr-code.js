@@ -26,13 +26,20 @@ function capturar(){
             console.log(data);
             let res = document.querySelector("[id='barcode']").value = data.codeResult.code;            
         });
-        
+        buscaProduto();
 }
 
 
 function fechar(){
     var element = document.querySelector('.modal');
     element.classList.remove('showModal');
+}
+
+
+function buscaProduto(){
+    if(res != ''){
+        alert('Estou aqui');
+    }
 }
 
 
