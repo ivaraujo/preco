@@ -24,22 +24,18 @@ function capturar(){
     
         Quagga.onDetected(function (data){
             console.log(data);
-            let res = document.querySelector("[id='barcode']").value = data.codeResult.code;            
+            let res = document.querySelector("[id='barcode']").value = data.codeResult.code;
+            fechar();            
         });
-        buscaProduto();
+        
 }
 
 
 function fechar(){
+    Quagga.stop();
     var element = document.querySelector('.modal');
     element.classList.remove('showModal');
 }
 
-
-function buscaProduto(){
-    if(res != ''){
-        alert('Estou aqui');
-    }
-}
 
 
