@@ -1,7 +1,7 @@
 <?php
     include("protect.php");
     include("conexao.php"); 
-    include("validarProduto.php");
+    include("validar_produtos.php");
     
     //Váriaveis
     $mercado = $_GET["mercado"];
@@ -78,7 +78,7 @@
     <link rel="stylesheet" href="../css/atualiza.css">
     <link rel="stylesheet" href="../css/mobile-atualiza.css">
     <script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script><!--  -->
 </head>
 <body>
     <header></header>
