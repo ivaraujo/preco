@@ -35,4 +35,6 @@ function fechar(){
     Quagga.stop();
     var element = document.querySelector('.modal');
     element.classList.remove('showModal');
+    var InputFocus = document.querySelector("[id='barcode']");
+    InputFocus.focus();
 }

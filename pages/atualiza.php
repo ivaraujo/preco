@@ -120,7 +120,7 @@
     <script src="../js/qr-code.js"></script>
     <script>
         $(document).ready (function(){
-            $("input[name='barcode']").blur(function(){
+            $("input[name='barcode']").focus(function(){
                 var $produto = $("input[name='produto']");
                 var $marca = $("input[name='marca']");
                 var $quantidade = $("input[name='quantidade']");
