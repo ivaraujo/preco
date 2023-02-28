@@ -12,9 +12,9 @@ function retorna($barcode, $mysqli){
         $valores['quantidade'] = $row_produtos['quantidade'];
         
     }
-    else{
+    /*else{
         $valores['produto'] = 'ERRO!';
-    }
+    }*/
     return json_encode($valores);
 }
 
