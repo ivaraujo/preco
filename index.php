@@ -124,7 +124,7 @@
                             <td><?php echo $dado_geral["mercado"];?></td>
                             <td><?php echo $dado_geral["marca"];?></td>
                             <td><?php echo $dado_geral["quantidade"];?></td>
-                            <td><?php echo $dado_geral["preco"];?></td>
+                            <td><?php echo 'R$ '.number_format($dado_geral["preco"], 2, ',', '.');?></td>
                         </tr>                                          			
                     <?php }?>
                 </table>
