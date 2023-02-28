@@ -1,7 +1,7 @@
 <?php
     include("protect.php");
     include("conexao.php"); 
-    //include("validar_produtos.php");
+    include("validar_produtos.php");
     
     //Váriaveis
     $mercado = $_GET["mercado"];
