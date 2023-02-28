@@ -47,7 +47,7 @@
                 <p>Bem vindo, <?php echo $_SESSION['name'];  ?></p>
                 <p><a href="logout.php">Sair</a></p>
             </div>
-            <h2>Cadastro de novos produtos</h2>   
+            <h2>Cadastro de produtos</h2>   
             <article>                              
                 <div class="caixa">
                     <form action="atualiza.php" method="get" class="botao">   
@@ -116,6 +116,7 @@
                     <th>Produto</th>
                     <th>Mercado</th>
                     <th>Marca</th>
+                    <th>Quantidade</th>
                     <th>Valor</th>
                     <th></th>
                 </tr>
@@ -124,6 +125,7 @@
                         <td><?php echo $dado_geral["produto"];?></td>
                         <td><?php echo $dado_geral["mercado"];?></td>
                         <td><?php echo $dado_geral["marca"];?></td>
+                        <td><?php echo $dado_geral["quantidade"];?></td>
                         <td><?php echo 'R$ '.number_format($dado_geral["preco"], 2, ',', '.');?></td>
                         <td><a href='delete.php?id=<?php echo $dado_geral["id"];?>' id="deleta">Apagar</a></td>
                     </tr>                                          			

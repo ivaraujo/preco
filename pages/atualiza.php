@@ -108,7 +108,7 @@
                 <input type="text" name="produto" placeholder="Nome do produto" required>
                 <input type="text" name="marca" placeholder="Nome da marca" required>
                 <input type="text" name="quantidade" placeholder="500g" required>
-                <input type="text" name="preco" placeholder="0.00" required>
+                <input type="text" name="preco" required>
                 <button type="submit" name="cadastrar">Cadastrar</button>
             </form>
         </section>

@@ -21,7 +21,4 @@ function retorna($barcode, $mysqli){
 if(isset($_GET['barcode'])){
     echo retorna($_GET['barcode'], $mysqli);
 }
-
-
-//echo retorna();
 ?>
