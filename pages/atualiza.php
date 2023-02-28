@@ -104,11 +104,11 @@
         <section>            
             <h2>Cadastrar/Atualizar</h2>            
             <form action="" method="post">                
-                <input type="number" name="barcode" id="barcode" placeholder="Código de barra" required autocomplete="off"">                                     
-                <input type="text" name="produto" placeholder="Nome do produto" required>
-                <input type="text" name="marca" placeholder="Nome da marca" required>
-                <input type="text" name="quantidade" placeholder="500g" required>
-                <input type="text" name="preco" required>
+                <input type="number" name="barcode" id="barcode" placeholder="Código de barra" required autocomplete="off">                                     
+                <input type="text" name="produto" placeholder="Nome do produto" required autocomplete="off">
+                <input type="text" name="marca" placeholder="Marca" required autocomplete="off">
+                <input type="text" name="quantidade" placeholder="500g" required autocomplete="off">
+                <input type="text" name="preco" required autocomplete="off">
                 <button type="submit" name="cadastrar">Cadastrar</button>
             </form>
         </section>
