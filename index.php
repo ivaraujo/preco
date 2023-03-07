@@ -3,13 +3,13 @@
     include("pages/conexao.php");
 
     //FILTROS
-    $filtro_produtos = "SELECT DISTINCT mercado, produto FROM mercadorias";
+    $filtro_produtos = "SELECT DISTINCT mercado, produto FROM mercadorias GROUP BY produto";
     $menu_mercados = $mysqli->query($filtro_produtos) or die ($mysqli->error);
     $menu_produto = $mysqli->query($filtro_produtos) or die ($mysqli->error);
 
-    //BUSCAR 
+    //Listagem dos produtos 
     
-    $consulta = "SELECT * FROM mercadorias ORDER BY produto ASC";
+    $consulta = "SELECT * FROM mercadorias ORDER BY produto ASC LIMIT 15";
     $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     
     if(isset($_POST["loja"]) || isset($_POST["mercadoria"])){

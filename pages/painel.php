@@ -2,7 +2,7 @@
     include("protect.php");
     include("conexao.php");
 
-    $consulta = "SELECT * FROM mercadorias";
+    $consulta = "SELECT * FROM mercadorias LIMIT 20";
     $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     
     $usuario = $_SESSION['name'];

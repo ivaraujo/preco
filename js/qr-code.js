@@ -7,6 +7,18 @@ function capturar(){
         inputStream : {
             name : "Live",
             type : "LiveStream",
+            constraints: {
+                width: 480,
+                height: 320,
+                facingMode: "environment"
+            },
+            area: { // defines rectangle of the detection/localization area
+                top: "0%",    // top offset
+                right: "0%",  // right offset
+                left: "0%",   // left offset
+                bottom: "0%"  // bottom offset
+            },
+            singleChannel: true, // true: only the red color-channel is read
             target: document.querySelector('#camera')    // Or '#yourElement' (optional)
         },
         decoder : {
