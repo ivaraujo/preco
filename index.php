@@ -3,8 +3,10 @@
     include("pages/conexao.php");
 
     //FILTROS
-    $filtro_produtos = "SELECT DISTINCT mercado, produto FROM mercadorias GROUP BY produto";
-    $menu_mercados = $mysqli->query($filtro_produtos) or die ($mysqli->error);
+    $filtro_mercado = "SELECT DISTINCT mercado FROM mercadorias GROUP BY mercado";
+    $menu_mercados = $mysqli->query($filtro_mercado) or die ($mysqli->error);
+
+    $filtro_produtos = "SELECT DISTINCT produto FROM mercadorias GROUP BY produto";
     $menu_produto = $mysqli->query($filtro_produtos) or die ($mysqli->error);
 
     //Listagem dos produtos 
