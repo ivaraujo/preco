@@ -9,7 +9,7 @@
 
     //Listagem dos produtos 
     
-    $consulta = "SELECT * FROM mercadorias ORDER BY produto ASC LIMIT 15";
+    $consulta = "SELECT * FROM mercadorias ORDER BY produto ASC";
     $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     
     if(isset($_POST["loja"]) || isset($_POST["mercadoria"])){
