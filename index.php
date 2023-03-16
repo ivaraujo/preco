@@ -23,8 +23,15 @@
         $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
     }
     else if($busca_produto != ""){
-        $consulta = "SELECT * FROM mercadorias WHERE produto = '$busca_produto'  ORDER BY preco ASC";
-        $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+        if($busca_mercado != ""){
+            $consulta = "SELECT * FROM mercadorias WHERE produto = '$busca_produto' AND mercado = '$busca_mercado'  ORDER BY preco ASC";
+            $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+        }
+        else{
+            $consulta = "SELECT * FROM mercadorias WHERE produto = '$busca_produto'  ORDER BY preco ASC";
+            $lista_geral = $mysqli->query($consulta) or die ($mysqli->error);
+        }
+        
     }                
     else{
         $consulta = "SELECT * FROM mercadorias WHERE mercado = '$busca_mercado' ORDER BY mercado ASC";
