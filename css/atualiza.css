@@ -65,12 +65,14 @@ h2{
 
 #botao-fechar{
     width: 50%;
-    padding: 15px;
+    padding: 5px;
     text-align: right;
 }
 
 .btn-fechar{
     width: 24px;
+    height: 50px;
+    padding: 5px 10px;
     cursor: pointer;
     background-color: brown;
     color: white;

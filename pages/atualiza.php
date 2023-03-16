@@ -77,8 +77,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/atualiza.css">
     <link rel="stylesheet" href="../css/mobile-atualiza.css">
-    <script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script><!--  -->
+    <script src="../js/quagga.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script><!--  -->
 </head>
 <body>
     <header></header>
