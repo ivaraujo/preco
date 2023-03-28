@@ -33,11 +33,18 @@ function capturar(){
             console.log("Inicialização finalizada. Pronto para começar!");
             Quagga.start();            
         });
-    
+        let contador = 0;
         Quagga.onDetected(function (data){
-            console.log(data);
+            //console.log(data);
             let res = document.querySelector("[id='barcode']").value = data.codeResult.code;
-            fechar();            
+
+            contador++;
+            console.log(contador);
+            if (contador > 10){                
+                fechar();
+                contador = 0;
+            }
+            console.log(res);            
         });
         
 }
