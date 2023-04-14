@@ -40,7 +40,7 @@ function capturar(){
 
             contador++;
             console.log(contador);
-            if (contador > 10){                
+            if (contador > 5){                
                 fechar();
                 contador = 0;
             }
