@@ -32,6 +32,9 @@
     input{
         width: 100%;
         font-size: 9pt;
+    } 
+
+    #botao-fechar{
+        text-align: center;
     }
-    
 }

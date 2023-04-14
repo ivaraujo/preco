@@ -8,8 +8,8 @@ function capturar(){
             name : "Live",
             type : "LiveStream",
             constraints: {
-                width: 390,
-                height: 820,
+                width: 350,
+                height: 350,
                 //facingMode: "environment"
             },
             area: { // defines rectangle of the detection/localization area
