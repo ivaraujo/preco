@@ -1,8 +1,27 @@
-function capturar(){
-    var element = document.querySelector('.modal');
+var element = document.querySelector('.modal');
+
+function capturar(){    
     element.classList.add('showModal');
+    quagga();
+}
 
 
+function fecharModal(){
+    element.classList.remove('showModal');
+    var InputFocus = document.querySelector("[id='barcode']");
+    InputFocus.focus();
+}
+
+function botaoFechar(){
+    fecharModal();    
+    window.location.reload();
+}
+
+function scanFechar(){
+    Quagga.stop();
+}
+
+function quagga(){
     Quagga.init({
         inputStream : {
             name : "Live",
@@ -33,27 +52,12 @@ function capturar(){
             console.log("Inicialização finalizada. Pronto para começar!");
             Quagga.start();            
         });
-        let contador = 0;
-        Quagga.onDetected(function (data){
-            //console.log(data);
-            let res = document.querySelector("[id='barcode']").value = data.codeResult.code;
-
-            contador++;
-            console.log(contador);
-            if (contador > 5){                
-                fechar();
-                contador = 0;
-            }
-            console.log(res);            
-        });
         
+        Quagga.onDetected(function (data){
+            let res = document.querySelector("[id='barcode']").value = data.codeResult.code;
+            fecharModal();
+            console.log(res);          
+        });
 }
 
 
-function fechar(){
-    Quagga.stop();
-    var element = document.querySelector('.modal');
-    element.classList.remove('showModal');
-    var InputFocus = document.querySelector("[id='barcode']");
-    InputFocus.focus();
-}
