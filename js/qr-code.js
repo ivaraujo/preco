@@ -8,13 +8,19 @@ function capturar(){
 
 function fecharModal(){
     element.classList.remove('showModal');
-    var InputFocus = document.querySelector("[id='barcode']");
-    InputFocus.focus();
+    var InputFocus = document.querySelector("[id='barcode']");    
+    InputFocus.focus();    
+}
+
+function mudarFocus(){
+    var PrecoFocus = document.querySelector("[id='preco']");
+    PrecoFocus.focus();
 }
 
 function botaoFechar(){
     fecharModal();    
     window.location.reload();
+    
 }
 
 function scanFechar(){
@@ -56,7 +62,7 @@ function quagga(){
         Quagga.onDetected(function (data){
             let res = document.querySelector("[id='barcode']").value = data.codeResult.code;
             fecharModal();
-            console.log(res);          
+            console.log(res);     
         });
 }
 

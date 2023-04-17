@@ -107,7 +107,7 @@
                 <input type="text" name="produto" placeholder="Nome do produto" required autocomplete="off">
                 <input type="text" name="marca" placeholder="Marca" required autocomplete="off">
                 <input type="text" name="quantidade" placeholder="500g" required autocomplete="off">
-                <input type="text" name="preco" required autocomplete="off">
+                <input type="text" name="preco" id="preco" required autocomplete="off">
                 <button type="submit" name="cadastrar">Cadastrar</button>
             </form>
         </section>
